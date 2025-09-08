@@ -1,0 +1,37 @@
+{
+    "questions": [
+        {
+            "id": 1,
+            "question": "Moodle is an example of a VLE. What does the acronym VLE stand for?",
+            "options": [
+                "Very Long Experience",
+                "Virtual Learning Experience",
+                "Virtual Learning Environment",
+                "Virtual Lesson Engine"
+            ],
+            "correctAnswer": "Virtual Learning Environment"
+        },
+        {
+            "id": 2,
+            "question": "Which programming language is primarily used for adding interactivity to web pages?",
+            "options": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Python"
+            ],
+            "correctAnswer": "JavaScript"
+        },
+        {
+            "id": 3,
+            "question": "What does CSS stand for in web development?",
+            "options": [
+                "Cascading Style Sheets",
+                "Creative Style System",
+                "Computer Style Syntax",
+                "Colorful Styling Solutions"
+            ],
+            "correctAnswer": "Cascading Style Sheets"
+        }
+    ]
+}
