@@ -1,13 +1,31 @@
 /* Background color for the whole page */
 body {
-  background: linear-gradient(135deg, #74ebd5, #9face6); /* gradient bg */
+  /* Set a massive background image with your gradients */
+  background-image: linear-gradient(135deg, #48f1d2, #9baaed, #eb9e9e, #32e9c8, #007bff, #48f1d2);
+  background-size: 400% 400%; /* Make it much larger than the body */
+  animation: colorChange 10s infinite ease-in-out; /* Use 'ease-in-out' for a smoother feel */
+  
+  /* Rest of your styles */
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* full screen */
+  height: 100vh;
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+@keyframes colorChange {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 
 /* Container settings */
 .login-container {
