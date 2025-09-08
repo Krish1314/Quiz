@@ -6,6 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextQuestionBtn = document.getElementById('nextQuestionBtn');
     const timeDisplay = document.getElementById('timeDisplay');
     const finishAttemptBtn = document.getElementById('finishAttemptBtn'); // New: Get the Finish Attempt button
+    const resultsPanel = document.getElementById('resultsPanel');
+    const scoreValue = document.getElementById('scoreValue');
+    const totalQuestionsEl = document.getElementById('totalQuestions');
+    const resultsDetails = document.getElementById('resultsDetails');
+    const retakeBtn = document.getElementById('retakeBtn');
 
     let currentQuestionIndex = 0;
     let allQuestions = [];
@@ -84,15 +89,45 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // New: Event listener for Finish Attempt button
+    function calculateScoreAndShowResults() {
+        // Build a map of questionId -> correctAnswer by reading from the DOM where we stored q data
+        let score = 0;
+        const total = allQuestions.length;
+        const details = [];
+
+        allQuestions.forEach((q) => {
+            const selected = document.querySelector(`input[name="question_${q.id}"]:checked`);
+            const selectedValue = selected ? selected.value : null;
+            const isCorrect = selectedValue === q.correctAnswer;
+            if (isCorrect) score++;
+            details.push(`<div>Q${q.id}: ${isCorrect ? 'Correct' : 'Wrong'}${selectedValue ? ` (Your answer: ${selectedValue})` : ' (No answer)'}</div>`);
+        });
+
+        scoreValue.textContent = String(score);
+        totalQuestionsEl.textContent = String(total);
+        resultsDetails.innerHTML = details.join('');
+
+        // Hide quiz UI and show results
+        document.getElementById('questionsWrapper').style.display = 'none';
+        resultsPanel.style.display = 'block';
+
+        if (timerInterval) clearInterval(timerInterval);
+    }
+
+    // Event listener for Finish Attempt button
     finishAttemptBtn.addEventListener('click', () => {
         const confirmFinish = confirm('Are you sure you want to finish the attempt?');
         if (confirmFinish) {
-            // Here you might add logic to submit answers if you were tracking them
-            // Then redirect to the desired page
-            window.location.href = '/Home Page (Student)/Index.html';
+            calculateScoreAndShowResults();
         }
     });
+
+    // Retake: reset page state
+    if (retakeBtn) {
+        retakeBtn.addEventListener('click', () => {
+            window.location.reload();
+        });
+    }
 
     // Fetch questions logic... (remains largely the same as before)
     fetch('http://localhost:3000/questions')
@@ -103,7 +138,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.json();
         })
         .then(questions => {
-            allQuestions = questions;
+            // Support both { questions: [...] } and [...] payloads
+            allQuestions = Array.isArray(questions) ? questions : (questions.questions || []);
             questionsContainer.innerHTML = '';
 
             if (allQuestions.length === 0) {

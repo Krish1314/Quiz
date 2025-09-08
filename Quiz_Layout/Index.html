@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Quiz Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+
+    <div class="container quiz-container">
+        <div class="row">
+            <!-- Sidebar for Quiz Navigation -->
+            <div class="col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Quiz navigation</div>
+                    <div class="panel-body" id="quizNavigation">
+                        <!-- Navigation buttons will be inserted here by JS -->
+                        <div class="btn-group-vertical" role="group" aria-label="Quiz Navigation">
+                            <!-- JS will populate this -->
+                        </div>
+                        <hr>
+                        <!-- CORRECTED BUTTON HERE -->
+                        <button type="button" class="btn btn-primary btn-block" id="finishAttemptBtn">Finish attempt...</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Area for Questions -->
+            <div class="col-md-9">
+                <!-- Quiz Information Panel -->
+                <div class="panel panel-info">
+                    <div class="panel-heading">Information</div>
+                    <div class="panel-body">
+                        <p>Welcome to the dynamic multiple-choice quiz!</p>
+                        <p>Answer the questions below to test your knowledge.</p>
+                        <div id="quizTimer" class="pull-right">
+                            <span class="glyphicon glyphicon-time"></span> Time Left: <span id="timeDisplay">00:00</span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+
+                <!-- Questions will be loaded here, one visible at a time -->
+                <div id="questionsWrapper">
+                    <div id="questionsContainer">
+                        <!-- Questions will be inserted here by JS -->
+                        <div class="text-center loading-spinner">
+                            <span class="glyphicon glyphicon-refresh glyphicon-spin"></span> Loading Questions...
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons for individual questions -->
+                    <div class="text-center button-navigation">
+                        <button type="button" class="btn btn-default" id="prevQuestionBtn">Previous</button>
+                        <button type="button" class="btn btn-default" id="nextQuestionBtn">Next</button>
+                    </div>
+                </div>
+
+                <!-- Results Panel (hidden by default) -->
+                <div id="resultsPanel" class="panel panel-success" style="display:none;">
+                    <div class="panel-heading">Results</div>
+                    <div class="panel-body">
+                        <p>Your score: <strong><span id="scoreValue">0</span></strong> / <strong><span id="totalQuestions">0</span></strong></p>
+                        <div id="resultsDetails" class="small"></div>
+                        <div class="text-right">
+                            <button type="button" class="btn btn-primary" id="retakeBtn">Retake</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery (required for Bootstrap JS) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -15,12 +15,12 @@
           <div class="panel-body">
             <form action="/Home Page (Student)/Index.html" method="post">
                 <div class="form-group">
-                <label for="studentEmail">Email or ID</label>
-                <input type="text" class="form-control" id="studentEmail" placeholder="Enter student email or ID">
+                <label for="studentEmail">Email:</label><br>
+                <input type="email" class="form-control" id="studentEmail" name="Email" placeholder="Enter student email" required>
                 </div>
                 <div class="form-group">
                     <label for="studentPassword">Password</label>
-                    <input type="password" class="form-control" id="studentPassword" placeholder="Password">
+                    <input type="password" class="form-control" id="studentPassword" placeholder="Password" minlength="8" required>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Login as Student</button>
                 <a href="#" class="pull-right">Forgot password?</a>
@@ -34,12 +34,12 @@
           <div class="panel-body">
             <form action="/home Page (Faculty)/Index.html" method="post">
               <div class="form-group">
-                <label for="facultyEmail">Email or ID</label>
-                <input type="text" class="form-control" id="facultyEmail" placeholder="Enter faculty email or ID">
+                <label for="facultyEmail">Email:</label><br>
+                <input type="email" class="form-control" id="facultyEmail" name="Email" placeholder="Enter faculty email" required>
               </div>
               <div class="form-group">
                 <label for="facultyPassword">Password</label>
-                <input type="password" class="form-control" id="facultyPassword" placeholder="Password">
+                <input type="password" class="form-control" id="facultyPassword" placeholder="Password" minlength="8" required>
               </div>
               <button type="submit" class="btn btn-success btn-block">Login as Faculty</button>
               <a href="#" class="pull-right">Forgot password?</a>

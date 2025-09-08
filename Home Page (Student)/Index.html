@@ -5,57 +5,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Student Home | QuizPortal</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="stylesheet.css" />
 </head>
 <body>
 
   <!-- Header -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-    <a class="navbar-brand font-weight-bold text-primary" href="#">QuizPortal</a>
-    <div class="ml-auto d-flex align-items-center">
-      <span class="mr-2">Welcome, Student</span>
-      <img src="assets/profile.png" alt="Profile" class="rounded-circle" width="40" />
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Quiz Portal</a>
+      <div class="dropdown ms-auto">
+        <img src="/Images/profile photo.jpg" class="rounded-circle" width="40" height="40" data-bs-toggle="dropdown" alt="Profile">
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="grades.html">Grades</a></li>
+          <li><a class="dropdown-item" href="/Login Page/Index.html">Logout</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
-  <!-- Navigation Tabs -->
-  <ul class="nav nav-tabs justify-content-center mt-3">
-    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-  </ul>
-
   <!-- Main Content -->
-  <div class="container mt-4">
-    <h3 class="text-center mb-4">My Courses</h3>
-    <div class="row" id="course-container">
-      <!-- Example Course Card -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">Java Basics</h5>
-            <p class="card-text">New quiz available: <strong>Quiz 1</strong></p>
-            <a href="/Quiz_Student/Index.html" class="btn btn-primary btn-sm">Start Quiz</a>
+  <main class="container mt-4">
+    <!-- Navigation -->
+    <ul class="nav nav-pills mb-3">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">My Courses</a>
+      </li>
+    </ul>
+
+    
+    <!-- Courses Section -->
+  <section class="courses-wrapper">
+    <div class="container">
+      <div class="row justify-content-center" id="courses-container">
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-banner gradient-1"></div>
+            <div class="card-body">
+              <h5 class="card-title"style="color:black; font-weight: bold;">Python Programming</h5>
+              <p class="card-text">Start your Python Programming Assessment. Complete this quiz to check your knowledge level..!</p>
+              <a href="/Quiz_Student/Index.html" class="btn btn-primary btn-sm">Start Quiz</a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">Web Development</h5>
-            <p class="card-text">No new quiz assigned</p>
-            <a href="#" class="btn btn-outline-secondary btn-sm disabled">View Course</a>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-banner gradient-2"></div>
+            <div class="card-body">
+              <h5 class="card-title" style="color:black; font-weight: bold;">Java Programming</h5>
+              <p class="card-text">Start your Java Programming Assessment. Complete this quiz to check your knowledge level..!</p>
+              <a href="/Quiz_Student/Index.html" class="btn btn-primary btn-sm">Start Quiz</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
+
+  </main>
 
   <!-- Footer -->
-  <footer class="main-footer text-center py-3 mt-5">
-    <p>&copy; 2025 QuizPortal. All rights reserved.</p>
-    <p><a href="#">Privacy Policy</a></p>
+  <footer class="text-center py-3 bg-light border-top">
+    <p class="mb-0">Developer: QuizPortal© 2025</p>
   </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
