@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Faculty Home | QuizPortal</title>
+  <title>Manage Quizzes | Java Programming | QuizPortal</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
   <link rel="stylesheet" href="stylesheet.css" />
@@ -12,7 +12,7 @@
 
   <!-- Header -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-    <a class="navbar-brand font-weight-bold text-primary" href="#">QuizPortal</a>
+    <a class="navbar-brand font-weight-bold text-primary" href="/home Page (Faculty)/faculty_home.html">QuizPortal</a>
     <div class="ml-auto d-flex align-items-center">
       <span class="mr-2">Welcome, Faculty</span>
       <img src="assets/faculty.png" alt="Profile" class="rounded-circle" width="40" />
@@ -21,35 +21,22 @@
 
   <!-- Navigation Tabs -->
   <ul class="nav nav-tabs justify-content-center mt-3">
-    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="/home Page (Faculty)/faculty_home.html">Home</a></li>
     <li class="nav-item"><a class="nav-link" href="/home Page (Faculty)/create_quiz.html">Create Quiz</a></li>
     <li class="nav-item"><a class="nav-link" href="#">Student Reports</a></li>
   </ul>
 
   <!-- Main Content -->
   <div class="container mt-4">
-    <h3 class="text-center mb-4">My Courses</h3>
-    <div class="row" id="course-container">
-      <!-- Example Course Card -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">Java Programming</h5>
-            <p class="card-text">3 quizzes created</p>
-            <a href="/home Page (Faculty)/manage_quiz.html" class="btn btn-primary btn-sm">Manage Quizzes</a>
-          </div>
-        </div>
+    <h3 class="mb-4">Manage Quizzes: <span id="course-title">Java Programming</span></h3>
+    <div class="card shadow-sm mb-4">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <span>Quizzes</span>
+        <a href="/home Page (Faculty)/create_quiz.html" class="btn btn-success btn-sm">Create New Quiz</a>
       </div>
-
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">Web Development</h5>
-            <p class="card-text">No quizzes yet</p>
-            <a href="#" class="btn btn-outline-success btn-sm">Create Quiz</a>
-          </div>
-        </div>
-      </div>
+      <ul class="list-group list-group-flush" id="quiz-list">
+        <!-- Quizzes will be loaded here by JavaScript -->
+      </ul>
     </div>
   </div>
 
@@ -59,5 +46,6 @@
     <p><a href="#">Faculty Help Center</a></p>
   </footer>
 
+  <script src="manage_quiz.js"></script>
 </body>
 </html>
