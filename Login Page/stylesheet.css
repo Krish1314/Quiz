@@ -1,0 +1,103 @@
+/* Background color for the whole page */
+body {
+  background: linear-gradient(135deg, #74ebd5, #9face6); /* gradient bg */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* full screen */
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Container settings */
+.login-container {
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* Panel styling */
+.panel {
+  box-shadow: 0 8px 20px rgba(8, 8, 8, 0.15);
+  border-radius: 15px;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #ffffff; /* clean card look */
+}
+
+.panel:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+/* Panel header */
+.panel-heading {
+  font-size: 22px;
+  text-align: center;
+  font-weight: bold;
+  color: #ffffff;
+  padding: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+/* Different colors for student/faculty */
+.panel-primary > .panel-heading {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+}
+
+.panel-success > .panel-heading {
+  background: linear-gradient(135deg, #28a745, #1e7e34);
+}
+
+/* Panel body */
+.panel-body {
+  padding: 30px;
+}
+
+/* Inputs */
+.form-control {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0,123,255,0.3);
+}
+
+/* Buttons */
+.btn {
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 16px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Links */
+a {
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .login-container .col-md-6 {
+    margin-bottom: 30px;
+  }
+}
+/* Force heading text to white for both panels */
+.panel-primary > .panel-heading,
+.panel-success > .panel-heading {
+  color: #ffffff !important;
+}
