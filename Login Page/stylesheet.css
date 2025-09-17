@@ -1,11 +1,7 @@
-/* Background color for the whole page */
 body {
-  /* Set a massive background image with your gradients */
   background-image: linear-gradient(135deg, #48f1d2, #9baaed, #eb9e9e, #32e9c8, #007bff, #48f1d2);
-  background-size: 400% 400%; /* Make it much larger than the body */
-  animation: colorChange 10s infinite ease-in-out; /* Use 'ease-in-out' for a smoother feel */
-  
-  /* Rest of your styles */
+  background-size: 400% 400%; 
+  animation: colorChange 10s infinite ease-in-out; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,7 +35,7 @@ body {
   border-radius: 15px;
   border: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background: #ffffff; /* clean card look */
+  background: #ffffff; 
 }
 
 .panel:hover {
